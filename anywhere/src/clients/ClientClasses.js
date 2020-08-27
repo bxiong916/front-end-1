@@ -2,24 +2,9 @@ import React, { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Axios from "axios";
+import classCard from '../components/classCard';
 
-const Form = styled.form`
-  display: flex;
-`;
-const Button = styled.button`
-  width: 100px;
-  margin: 0 auto;
-`;
-const Div = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-const ClassDiv = styled.div`
-  width: 30%;
-  margin: 0 auto;
-`;
-
-const cClasses = () => {
+const clientClasses = () => {
   const [classInfo, setClassInfo] = useState({
     time: "",
     date: "",

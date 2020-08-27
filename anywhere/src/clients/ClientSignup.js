@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import Button from 'react-bootstrap/Button'
 
-const CSignup = (props) => {
+const ClientSignup = (props) => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
-  });
+  })
   const [isFetching, setIsFetching] = useState(false);
 
   const handleChange = (e) => {
@@ -60,14 +63,14 @@ const CSignup = (props) => {
           Sign Up
         </button>
         <br />
-        <Link to="/login">I already have an account</Link>
+        <Link to="/login">Already have an account</Link>
         <br></br>
         <Link exact to="/">
           <button>Home</button>
         </Link>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default CSignup;
+export default ClientSignup;

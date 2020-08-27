@@ -1,7 +1,9 @@
-import React from "react";
-// import { Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import { Button } from "react-bootstrap";
 
-const iSignup = (props) => {
+const instructSignup = (props) => {
   const [instructorCredentials, setinstructorCredentials] = useState({
     email: "",
     password: "",

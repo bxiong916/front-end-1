@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axiosWithAuth from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({});
@@ -11,11 +13,11 @@ const Login = (props) => {
       .then((res) => {
         console.log("login axios call", res);
         localStorage.setItem("token", res.data.token);
-        // console.log("check", res.data.role_id);
+
         if (res.data.role_id === 123) {
-          props.history.push("/instructorClasses");
+          props.history.push("/iClasses");
         } else {
-          props.history.push("/clientClasses");
+          props.history.push("/cClasses");
         }
       })
       .catch((err) => {
@@ -37,7 +39,7 @@ const Login = (props) => {
           type="email"
           placeholder="Email"
           name="email"
-          value={instructorCredentials.email}
+          value={credentials.email}
           onChange={handleChange}
           required
         />
