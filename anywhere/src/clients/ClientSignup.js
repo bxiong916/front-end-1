@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axiosWithAuth from "../utils/axiosWithAuth";
 import Button from 'react-bootstrap/Button'
 
 const ClientSignup = (props) => {
@@ -25,10 +24,7 @@ const ClientSignup = (props) => {
       .post("/signup/client", credentials)
       .then((res) => {
         console.log("data from the signup component: ", res);
-        // setCredentials({
-        //     name: "",
-        //     password: ""
-        // });
+    
         setIsFetching(false);
         props.history.push("/login");
       })
