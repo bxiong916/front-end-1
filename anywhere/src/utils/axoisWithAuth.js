@@ -4,7 +4,7 @@ const axiosWithAuth = () => {
     const token = localStorage.getItem("token")
 
     return axios.create({
-        baseURL: "https://anywherefitnessapp.herokuapp.com/api",
+        baseURL: "",
         headers: {
             Authorization: token
         }
