@@ -21,7 +21,7 @@ const clientClasses = () => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://anywherefitnessapp.herokuapp.com/api/clients/class")
+    Axios.get("")
       .then((res) => {
         console.log("Response Data", res.data);
         setInfo(res.data);
@@ -137,14 +137,14 @@ const clientClasses = () => {
           </Button>
         </Div>
       </Form>
-      {/* <ClassDiv>
+      * <ClassDiv>
                     {info.map(e => {
                         return <ClassCard name={e.class_name} teacher={e.instructor_name} location={e.location} date={e.start_date} duration={e.duration} time={e.start_time}/>
                     })}
-                </ClassDiv> */}
-      {/* <Link exact to="/"> */}
+                </ClassDiv>
+      <Link exact to="/">
       <button>Home</button>
-      {/* </Link> */}
+      </Link>
     </div>
   );
 };
